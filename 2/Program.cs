@@ -4,17 +4,23 @@
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i <= 5; i++)
+            Console.Write("Masukan jumlah baris segitiga = ");
+            int jumlah = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= jumlah; i++)
             {
-                for (int j = 4; j >= i; j--)
+                for (int j = 1; j <= jumlah; j++)
                 {
-                    Console.Write("  ");
+                    if (j >= jumlah - (i - 1) && j <= jumlah + (i - 1))
+                    {
+                        Console.Write("* ");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
                 }
-                for (int k = 1; k <= i; k++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine(" ");
+                Console.Write("\n");
             }
         }
     }
